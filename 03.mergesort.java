@@ -6,8 +6,8 @@ public class Quick {
         if (n > 1) {
             int p = (int) Math.floor(n / 2.0);
             int q = (int) Math.ceil(n / 2.0);
-            int[] b = new int[pSize];
-            int[] c = new int[qSize];
+            int[] b = new int[p];
+            int[] c = new int[q];
             System.arraycopy(a, 0, b, 0, p);
             System.arraycopy(a, p, c, 0, q);
             mergesort(b);
