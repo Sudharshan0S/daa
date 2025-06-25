@@ -4,34 +4,34 @@ public class Quick {
     static void mergesort(int[] a) {
         int n = a.length;
         if (n > 1) {
-            int pSize = (int) Math.floor(n / 2.0);
-            int qSize = (int) Math.ceil(n / 2.0);
-            int[] p = new int[pSize];
-            int[] q = new int[qSize];
-            System.arraycopy(a, 0, p, 0, pSize);
-            System.arraycopy(a, pSize, q, 0, qSize);
-            mergesort(p);
-            mergesort(q);
-            merge(a, p, q);
+            int p = (int) Math.floor(n / 2.0);
+            int q = (int) Math.ceil(n / 2.0);
+            int[] b = new int[pSize];
+            int[] c = new int[qSize];
+            System.arraycopy(a, 0, b, 0, p);
+            System.arraycopy(a, p, c, 0, q);
+            mergesort(b);
+            mergesort(c);
+            merge(b,c,a);
         }
     }
-    static void merge(int[] a, int[] p, int[] q) {
+    static void merge(int[] b, int[] c, int[] a) {
         int i = 0, j = 0, k = 0;
-        int pLen = p.length;
-        int qLen = q.length;
-        while(i < pLen && j < qLen) {
+        int p = b.length;
+        int q = c.length;
+        while(i < p && j < q) {
             count++;
-            if (p[i] <= q[j]) {
-                a[k++] = p[i++];
+            if (b[i] <= c[j]) {
+                a[k++] = b[i++];
             } else {
-                a[k++] = q[j++];
+                a[k++] = c[j++];
             }
         }
-        while (i < pLen) {
-            a[k++] = p[i++];
+        while (i < p) {
+            a[k++] = b[i++];
         }
-        while (j < qLen) {
-            a[k++] = q[j++];
+        while (j < q) {
+            a[k++] = c[j++];
         }
     }
     public static void main(String[] args) {
@@ -39,10 +39,10 @@ public class Quick {
         System.out.println("Enter the number of elements:");
         int n = sc.nextInt();
         int[] a = new int[n];
-        Random rand = new Random();
+        Random r = new Random();
         System.out.println("Input array (random numbers):");
         for (int i = 0; i < n; i++) {
-            a[i] = rand.nextInt(1000);
+            a[i] = r.nextInt(1000);
             System.out.print(a[i] + " ");
         }
         System.out.println();
