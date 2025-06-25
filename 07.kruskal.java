@@ -27,7 +27,7 @@ public class pgm7 {
 				v=par[v];
 			if(u!=v)
 			{
-				System.out.println("Cost laying from town"+a+"to town"+b+"is"+min+"lakhs");
+				System.out.println("Cost laying from town "+a+" to town "+b+" is "+min+"lakhs");
 				mincost+=min;
 				if(u<v)
 					par[v]=u;
@@ -37,7 +37,7 @@ public class pgm7 {
 			}
 			cost[a][b]=cost[b][a]=Integer.MAX_VALUE;
 		}
-		System.out.println("Cost of laying entire road network= "+mincost+"lakhs");
+		System.out.println("Cost of laying entire road network= "+mincost+" lakhs");
 	}
 	
 	public static void main(String args[])
