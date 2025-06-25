@@ -34,7 +34,7 @@ public class Dijkstra {
 		}
 		System.out.println("The shortest time travel");
 		for(v=0;v<n;v++)
-			System.out.println("From"+source+"city to"+v+"city is"+dist[v]);
+			System.out.println("From "+source+" city to "+v+" city is "+dist[v]);
 	}
 	
 	public static void main(String[] args)
